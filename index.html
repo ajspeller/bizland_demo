@@ -13,7 +13,7 @@
   <title>BizLand Theme</title>
 </head>
 
-<body>
+<body id="home" class="scrollspy">
   <header class="main-header">
     <div class="primary-overlay">
       <div class="navbar-fixed">
@@ -112,6 +112,139 @@
     </div>
   </section>
 
+  <!-- section about -->
+
+  <section  id="about" class="scrollspy section section-about grey lighten-3 center">
+    <div class="container">
+      <h2>About BizLand</h2>
+      <p class="flow-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo earum aut, maiores non facere inventore natus
+        quo quam dolorum!</p>
+      <div class="row">
+        <div class="col s12 m6">
+          <img src="img/people.jpg" class="responsive-img circle" alt="">
+        </div>
+        <div class="col s12 m5 offset-m1">
+          <br>
+          <ul class="collection with-header z-depth-4">
+            <li class="collection-header">
+              <h5>Services</h5>
+            </li>
+            <li class="collection-item">
+              <i class="material-icons left">check</i> Business Consultation
+            </li>
+            <li class="collection-item">
+              <i class="material-icons left">check</i> Financial Analytics
+            </li>
+            <li class="collection-item">
+              <i class="material-icons left">check</i> Security Services
+            </li>
+            <li class="collection-item">
+              <i class="material-icons left">check</i> Marketing and Advertising
+            </li>
+            <li class="collection-item">
+              <i class="material-icons left">check</i> Internet Services
+            </li>
+            <li class="collection-item">
+              <i class="material-icons left">check</i> Accounting
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- section testimonial -->
+  <section id="testimonials" class="scrollspy section section-testimonials blue white-text center">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="card grey lighten-4 black-text z-depth-4">
+            <div class="card-content">
+              <p>
+                <em>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi distinctio error quisquam, unde dignissimos
+                  aliquid. Enim consequuntur vero perferendis molestias?</em>
+              </p>
+            </div>
+            <div class="card-action">
+              <p>Jane Doe from Yoyo Inc</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card grey lighten-4 black-text z-depth-4">
+            <div class="card-content">
+              <p>
+                <em>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi distinctio error quisquam, unde dignissimos
+                  aliquid. Enim consequuntur vero perferendis molestias?</em>
+              </p>
+            </div>
+            <div class="card-action">
+              <p>Jane Doe from Yoyo Inc</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card grey lighten-4 black-text z-depth-4">
+            <div class="card-content">
+              <p>
+                <em>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi distinctio error quisquam, unde dignissimos
+                  aliquid. Enim consequuntur vero perferendis molestias?</em>
+              </p>
+            </div>
+            <div class="card-action">
+              <p>Jane Doe from Yoyo Inc</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- section contact -->
+
+
+
+  <!-- section footer -->
+  <footer class="page-footer blue-grey darken-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5>Location</h5>
+          <p> BizLand, Inc </p>
+          <p> 1234 Some Beach, Virginia Beach </p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li>
+              <a href="#home" class="white-text">Home</a>
+            </li>
+            <li>
+              <a href="#about" class="white-text">About</a>
+            </li>
+            <li>
+              <a href="#testimonials" class="white-text">Testimonials</a>
+            </li>
+            <li>
+              <a href="#contact" class="white-text">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright blue-grey darken-4">
+      <div class="container">
+        BizLand Theme © 2018
+        <a class="grey-text text-lighten-4 right" href="#!">
+          <i class="material-icons left">keyboard_arrow_up</i>Back To Top</a>
+      </div>
+    </div>
+  </footer>
+
+
+
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -139,6 +272,9 @@
       ];
 
       Materialize.scrollFire(options);
+
+      // init scrollspy
+      $('.scrollspy').scrollSpy();
     });
   </script>
 </body>
