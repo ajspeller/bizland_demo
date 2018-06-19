@@ -114,7 +114,7 @@
 
   <!-- section about -->
 
-  <section  id="about" class="scrollspy section section-about grey lighten-3 center">
+  <section id="about" class="scrollspy section section-about grey lighten-3 center">
     <div class="container">
       <h2>About BizLand</h2>
       <p class="flow-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo earum aut, maiores non facere inventore natus
@@ -203,7 +203,35 @@
   </section>
 
   <!-- section contact -->
-
+  <section class="section section-contact center scrollspy" id="contact">
+    <div id="googlemap"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6 offset-m6">
+          <div class="card-panel z-depth-5">
+            <h4>Contact Us</h4>
+            <div class="input-field">
+              <input type="text" name="name" id="name">
+              <label for="name">Name</label>
+            </div>
+            <div class="input-field">
+              <input type="email" name="email" id="email">
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field">
+              <input type="text" name="phone" id="phone">
+              <label for="phone">Phone</label>
+            </div>
+            <div class="input-field">
+              <textarea class="materialize-textarea" name="message" id="message"></textarea>
+              <label for="message">Message</label>
+            </div>
+            <input type="submit" value="Submit" class="btn blue-grey">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
   <!-- section footer -->
@@ -248,6 +276,7 @@
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBP4N1-rEiIFMpSt5wwMYjbRthdGRJMIPw"async defer></script>
   <script>
     $(document).ready(function () {
       // init sidenav
@@ -275,6 +304,39 @@
 
       // init scrollspy
       $('.scrollspy').scrollSpy();
+
+      const position = [36.8527778, -75.9783333];
+      const centerPosition = [36.8527778, -75.9783333];
+
+      function showGoogleMaps() {
+        // Map positions
+        const latLng = new google.maps.LatLng(...position);
+        const centerLatLng = new google.maps.LatLng(...centerPosition);
+
+        // Map options
+        const mapOptions = {
+          zoom: 16,
+          streetViewControl: false,
+          scaleControl: true,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          center: centerLatLng,
+        };
+
+        // Create map
+        map = new google.maps.Map(document.querySelector('googlemap'), mapOptions);
+
+        // Show Marker
+        marker = new google.maps.Marker({
+          position: latLng,
+          map: map,
+          draggable: false,
+          animation: google.maps.Animation.DROP,
+        });
+      }
+
+      // Maps event
+      google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+
     });
   </script>
 </body>
